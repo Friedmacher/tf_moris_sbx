@@ -11,8 +11,8 @@ variable "btp_idp" {
   description = "Identity provider for the BTP provider."
   type        = string
   validation {
-    condition     = can(regex("^[a-zA-Z0-9-]{1,40}$", var.btp_idp))
-    error_message = "BTP IDP must be 1–40 characters and contain only letters, digits or hyphens."
+    condition     = can(regex("^[a-zA-Z0-9-.]{1,40}$", var.btp_idp))
+    error_message = "BTP IDP must be 1–40 characters and contain only letters, digits, dots or hyphens."
   }
 }
 
