@@ -1,5 +1,5 @@
 terraform {
   backend "s3" {
-    key = "moris-sbx/terraform.tfstate"
+    key = "moris/sbx/terraform.tfstate"
   }
 }
