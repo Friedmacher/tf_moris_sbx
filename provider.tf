@@ -1,0 +1,14 @@
+terraform {
+  required_providers {
+    btp = {
+      source  = "SAP/btp"
+      version = "1.22.0"
+    }
+  }
+}
+
+# Configure the BTP Provider
+provider "btp" {
+  globalaccount = var.global_account
+  idp           = var.btp_idp
+}
