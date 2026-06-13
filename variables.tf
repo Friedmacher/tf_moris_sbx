@@ -8,11 +8,11 @@ variable "global_account" {
 }
 
 variable "btp_idp" {
-  description = "Identity provider for the BTP provider."
+  description = "Host of the Identity Provider (IdP) to be trusted."
   type        = string
   validation {
-    condition     = can(regex("^[a-zA-Z0-9-.]{1,40}$", var.btp_idp))
-    error_message = "BTP IDP must be 1–40 characters and contain only letters, digits, dots or hyphens."
+    condition     = can(regex("^[a-zA-Z0-9.-]+$", var.btp_idp))
+    error_message = "btp_idp must be a valid hostname."
   }
 }
 
