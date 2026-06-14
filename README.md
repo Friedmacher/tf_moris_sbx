@@ -1,4 +1,4 @@
-# tf_moris_sbx
+# Terraform - MoRIS Sandbox
 Create the MoRIS Sandbox environment.
 
 # Prepare

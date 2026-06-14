@@ -4,6 +4,10 @@ terraform {
       source  = "SAP/btp"
       version = "1.22.0"
     }
+    cloudfoundry = {
+      source  = "cloudfoundry/cloudfoundry"
+      version = "1.15.0"
+    }
   }
 }
 
@@ -11,4 +15,9 @@ terraform {
 provider "btp" {
   globalaccount = var.global_account
   idp           = var.btp_idp
+}
+
+# Configure the Cloud Foundry Provider
+provider "cloudfoundry" {
+  api_url = var.cf.api_url
 }
