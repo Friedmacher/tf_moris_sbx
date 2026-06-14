@@ -16,6 +16,15 @@ variable "btp_idp" {
   }
 }
 
+variable "btp_platform_idp" {
+  description = "FQDN of the Platform Identity Provider."
+  type        = string
+  validation {
+    condition     = can(regex("^[a-zA-Z0-9.-]+$", var.btp_platform_idp))
+    error_message = "btp_platform_idp must be a valid FQDN."
+  }
+}
+
 variable "project_name" {
   description = "Name of the project the subaccount belongs to."
   type        = string
