@@ -19,5 +19,5 @@ provider "btp" {
 
 # Configure the Cloud Foundry Provider
 provider "cloudfoundry" {
-  api_url = var.cf.api_url
+  api_url = var.cf_api_url
 }

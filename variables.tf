@@ -78,3 +78,8 @@ variable "cf_region" {
     error_message = "The region of the subaccount must be one of: eu10-005."
   }
 }
+
+variable "cf_api_url" {
+  description = "API URL of the Cloud Foundry instance."
+  type        = string
+}
