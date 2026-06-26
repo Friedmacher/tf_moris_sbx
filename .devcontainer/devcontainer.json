@@ -1,39 +1,33 @@
 {
     "name": "MoRIS Sandbox",
-    "image": "mcr.microsoft.com/devcontainers/base:trixie",
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
     "initializeCommand": "sh .devcontainer/initialize.sh",
     "postCreateCommand": "sh .devcontainer/post-create.sh",
     "runArgs": [
-		"--env-file",
-		".devcontainer/devcontainer.env"
-	],
+        "--env-file",
+        ".devcontainer/devcontainer.env"
+    ],
     "features": {
-        "ghcr.io/devcontainers/features/terraform:1": {
-            "version": "1.15.5",
-            "tflint": "0.63.1"
-        },
-        "ghcr.io/devcontainers/features/git:1": {}
+        "ghcr.io/devcontainers/features/terraform:1": {}
     },
     "customizations": {
         "vscode": {
             "extensions": [
                 "hashicorp.terraform"
-            ]
-        },
-        "settings": {
-        "[terraform]": {
-          "editor.defaultFormatter": "hashicorp.terraform",
-          "editor.formatOnSave": true
-        },
-        "[terraform-vars]": {
-          "editor.defaultFormatter": "hashicorp.terraform",
-          "editor.formatOnSave": true
+            ],
+            "settings": {
+                "[terraform]": {
+                    "editor.defaultFormatter": "hashicorp.terraform",
+                    "editor.formatOnSave": true
+                },
+                "[terraform-vars]": {
+                    "editor.defaultFormatter": "hashicorp.terraform",
+                    "editor.formatOnSave": true
+                }
+            }
         }
-      }
     },
-    "mounts": [
-    ],
+    "mounts": [],
     "remoteUser": "vscode",
-    "remoteEnv": {
-    }
+    "remoteEnv": {}
 }
