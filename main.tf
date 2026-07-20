@@ -1,6 +1,6 @@
 locals {
   git_url        = "git::https://github.com/Friedmacher/tf_modules.git//modules/"
-  module_version = "v1.5.18"
+  module_version = "v1.6.3"
   user_namess = [
     "manuel.friedmacher@sap.com"
   ]
@@ -56,4 +56,11 @@ module "abap_add" {
   abap_sid                    = var.abap_sid
   abap_admin_email            = var.abap_admin_email
   abap_is_development_allowed = var.abap_is_development_allowed
+}
+
+module "workzone" {
+  source           = "${local.git_url}wz_add?ref=${local.module_version}"
+  subaccount_id    = module.sa_build.subaccount_id
+  btp_platform_idp = var.btp_platform_idp
+  cf_space_id      = module.cf_space_add.cf_space_id
 }
